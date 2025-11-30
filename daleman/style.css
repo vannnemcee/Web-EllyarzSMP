@@ -262,7 +262,14 @@ input[type="checkbox"]{
     align-items: center;
   }
   .package-card {
-    min-width: 90vw;
+    min-width: 80vw;
+    max-width: 92vw;
+    padding: 18px 8px 16px 8px;
+  }
+  .nickname-input {
+    width: 90vw;
     max-width: 98vw;
+    font-size: 1rem;
+    padding: 10px 8px;
   }
 }
