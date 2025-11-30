@@ -66,7 +66,7 @@ function buyPackage(packageData) {
         document.getElementById('nicknameInput').focus();
         return;
     }
-    let message = "Halo atmin\nsaya ingin beli nih\n\n*╓──────── ✧ ʟɪsᴛ ✧*\n*║ ɴɪᴄᴋɴᴀᴍᴇ ᴍᴄ* : ${nickname.trim()}\n*║ ɴᴀᴍᴀ ᴘʀᴏᴅᴜᴋ* : ${packageData.name}\n*║ ᴘɪʟɪʜᴀɴ* : (${packageData.gems} Gems)\n*║ ʜᴀʀɢᴀ* : ${formatPrice(packageData.price)}\n║ ᴍᴇᴛᴏᴅᴇ ᴘᴇᴍʙᴀʏᴀʀᴀɴ* : ${paymentMethodText}\n╙──────────────❂*\nʟɪsᴛ sᴜᴅᴀʜ ᴅɪʙᴜᴀᴛ\n\n𝗦𝗶𝗹𝗮𝗵𝗸𝗮𝗻 𝘁𝘂𝗻𝗴𝗴𝘂 𝗮𝘁𝗺𝗶𝗻 𝗺𝗲𝗻𝗷𝗮𝘄𝗮𝗯🙏\n\n*© ᴇʟʟʏᴀʀᴢsᴍᴘ*";
+    let message = `Halo atmin\nsaya ingin beli nih\n\n*╓──────── ✧ ʟɪsᴛ ✧*\n*║ ɴɪᴄᴋɴᴀᴍᴇ ᴍᴄ* : ${nickname.trim()}\n*║ ɴᴀᴍᴀ ᴘʀᴏᴅᴜᴋ* : ${packageData.name}\n*║ ᴘɪʟɪʜᴀɴ* : (${packageData.gems} Gems)\n*║ ʜᴀʀɢᴀ* : ${formatPrice(packageData.price)}\n║ ᴍᴇᴛᴏᴅᴇ ᴘᴇᴍʙᴀʏᴀʀᴀɴ* : ${paymentMethodText}\n╙──────────────❂*\nʟɪsᴛ sᴜᴅᴀʜ ᴅɪʙᴜᴀᴛ\n\n𝗦𝗶𝗹𝗮𝗵𝗸𝗮𝗻 𝘁𝘂𝗻𝗴𝗴𝘂 𝗮𝘁𝗺𝗶𝗻 𝗺𝗲𝗻𝗷𝗮𝘄𝗮𝗯🙏\n\n*© ᴇʟʟʏᴀʀᴢsᴍᴘ*`;
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
@@ -120,7 +120,7 @@ function buyPackage(packageData) {
     // END: Validasi metode pembayaran
 
     // START: Update isi pesan WhatsApp
-    let message = let message = `Halo,\n saya ingin membeli paket *${packageData.name}* (${packageData.gems} Gems) seharga Rp ${formatPrice(packageData.price)}\nNickname MC: ${nickname.trim()}\nMetode Pembayaran: ${paymentMethodText}`;
+    let message = `Halo atmin\nsaya ingin beli nih\n\n*╓──────── ✧ ʟɪsᴛ ✧*\n*║ ɴɪᴄᴋɴᴀᴍᴇ ᴍᴄ* : ${nickname.trim()}\n*║ ɴᴀᴍᴀ ᴘʀᴏᴅᴜᴋ* : ${packageData.name}\n*║ ᴘɪʟɪʜᴀɴ* : (${packageData.gems} Gems)\n*║ ʜᴀʀɢᴀ* : ${formatPrice(packageData.price)}\n║ ᴍᴇᴛᴏᴅᴇ ᴘᴇᴍʙᴀʏᴀʀᴀɴ* : ${paymentMethodText}\n╙──────────────❂*\nʟɪsᴛ sᴜᴅᴀʜ ᴅɪʙᴜᴀᴛ\n\n𝗦𝗶𝗹𝗮𝗵𝗸𝗮𝗻 𝘁𝘂𝗻𝗴𝗴𝘂 𝗮𝘁𝗺𝗶𝗻 𝗺𝗲𝗻𝗷𝗮𝘄𝗮𝗯🙏\n\n*© ᴇʟʟʏᴀʀᴢsᴍᴘ*`;
     // END: Update isi pesan WhatsApp
     
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -145,8 +145,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', function() {
     generatePackageCards();
 });
-
-
 
 
 
