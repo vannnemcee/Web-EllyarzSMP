@@ -22,6 +22,41 @@
   color: #c0c0c0;
   opacity: 1;
 }
+/* Pilihan Metode Pembayaran */
+.payment-select {
+  background-color: #00000051;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #009688;
+  font-size: 1rem;
+  width: 260px;
+  max-width: 90%;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  -webkit-appearance: none; /* Menghilangkan style default di Safari */
+  -moz-appearance: none; /* Menghilangkan style default di Firefox */
+  appearance: none; /* Menghilangkan style default */
+  cursor: pointer;
+}
+.payment-select option {
+  background-color: #2c3e50; /* Warna latar belakang untuk opsi */
+  color: #fff;
+}
+.payment-select:focus {
+  border-color: #00bcd4;
+  background-color: #00968833;
+  box-shadow: 0 0 0 2px #00bcd444;
+}
+/* Tambahan kecil untuk ikon dropdown, bisa diabaikan jika tidak ingin repot */
+/* Menggunakan background-image untuk custom arrow */
+.payment-select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px; /* Ruang untuk ikon */
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -40,14 +75,16 @@ nav{
   display: flex;
   height: 80px;
   width: 100%;
-  background: rgba(20, 30, 50, 0.55);
+  position: fixed;
+  top: 0;
+  background: rgba(8, 12, 20, 0.359);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   align-items: center;
   justify-content: space-between;
   padding: 0 50px 0 100px;
   flex-wrap: wrap;
-  position: relative;
+  /* position: relative; <= Hapus atau ubah menjadi fixed/sticky */
   z-index: 1002;
 }
 nav .logo{
@@ -89,6 +126,98 @@ nav .menu-btn i{
 input[type="checkbox"]{
   display: none;
 }
+/* START: STYLING FOOTER DITAMBAHKAN */
+.footer {
+    /* Background dan Padding Utama */
+    background: #152238; /* Warna dark blue, sesuaikan dengan tema Anda */
+    padding: 60px 0 20px;
+    color: #f2f2f2;
+    border-top: 1px solid #009688;
+    margin-top: 60px; /* Memberi jarak dari section di atasnya */
+}
+
+.footer .container {
+    /* Batas lebar konten */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    /* Layout kolom menggunakan Flexbox */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    /* Pengaturan lebar kolom */
+    flex: 1 1 30%; 
+    min-width: 200px;
+}
+
+.footer-col h5 {
+    /* Styling judul kolom */
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00bcd4; /* Warna terang untuk judul */
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    /* Styling teks deskripsi */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #c0c0c0;
+}
+
+/* Styling untuk Kontak */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-links a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.contact-links a:hover {
+    color: #009688; /* Efek hover saat disentuh */
+}
+
+/* Styling untuk list Informasi */
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #c0c0c0;
+}
+
+
+/* Styling Copyright di bagian bawah */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #888;
+}
 @media (max-width: 1000px){
   nav{
     padding: 0 40px 0 50px;
@@ -105,7 +234,9 @@ input[type="checkbox"]{
     position: fixed;
     top: 80px;
     left: -100%;
-    background: #111;
+    background: #111111;
+    background: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     height: 100vh;
     width: 100%;
     text-align: center;
@@ -167,10 +298,12 @@ input[type="checkbox"]{
 }
 
 .package-card {
-  background: #00000026;
-  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #334155;
+  border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.09);
-  padding: 28px 22px 22px 22px;
+  padding: 32px 24px;
+  text-align: center;
   min-width: 220px;
   max-width: 240px;
   flex: 1 1 220px;
@@ -179,7 +312,7 @@ input[type="checkbox"]{
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition: transform 0.2s;
+  transition:all 0.3s;
   border: 2.5px solid transparent;
 }
 
@@ -188,8 +321,9 @@ input[type="checkbox"]{
   box-shadow: 0 4px 18px rgba(255, 213, 0, 0.814), 0 2px 12px rgba(0,0,0,0.09);
 }
 .package-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+    transform: translateY(-5px);
 }
 .package-icon {
   font-size: 38px;
@@ -237,8 +371,9 @@ input[type="checkbox"]{
   gap: 6px;
 }
 .btn-buy:hover {
-  background: linear-gradient(90deg,#00bcd4 60%,#009688 100%);
-}
+  opacity: 0.9;
+  transform: scale(1.02);
+  }
 .popular-badge {
   position: absolute;
   top: -16px;
@@ -257,19 +392,60 @@ input[type="checkbox"]{
 }
 
 @media (max-width: 700px) {
-  #packagesGrid {
-    flex-direction: column;
-    align-items: center;
-  }
   .package-card {
-    min-width: 80vw;
-    max-width: 92vw;
+    display: fleX;
+    min-width: 110px;
+    max-width: 130px;
     padding: 18px 8px 16px 8px;
+    margin-right: 0;
   }
+  
   .nickname-input {
     width: 90vw;
     max-width: 98vw;
     font-size: 1rem;
     padding: 10px 8px;
   }
+  .btn-buy {
+  background: linear-gradient(90deg,#009688 60%,#00bcd4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 7px;
+  font-size: 0.5rem;
+  font-weight: 600;
+  gap: 6px;
+  }
+  .package-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+ }
+ .gems-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #009688;
+ }
+ .nickname-input {
+  background-color: #00000051;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #009688;
+  font-size: 1rem;
+  width: 250px;
+  max-width: 90%;
+}
+.footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: 90%;
+        margin-bottom: 20px;
+    }
+    .contact-links {
+        align-items: center;
+    }
 }
