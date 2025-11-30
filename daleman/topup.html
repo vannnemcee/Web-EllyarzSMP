@@ -33,8 +33,56 @@
         <div style="margin-bottom: 24px;">
           <input type="text" id="nicknameInput" class="nickname-input" placeholder="Masukan nickname MC">
         </div>
-      <div id="packagesGrid" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;"></div>
+        <div style="margin-bottom: 30px;">
+          <select id="paymentMethod" class="payment-select" required>
+            <option value="" disabled selected>Pilih Metode Pembayaran</option>
+            <option value="dana">DANA</option>
+            <option value="gopay">GoPay</option>
+            <option value="bca">Transfer Bank BCA</option>
+            <option value="bri">Transfer Bank BRI</option>
+          </select>
+        </div>
+        <div id="packagesGrid" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;"></div>
     </section>
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h5>Tentang Kami</h5>
+                    <p>EllyarzSMP adalah server yang memiliki sistem economy dan seru.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h5>Kontak</h5>
+                    <div class="contact-links">
+                        <a href="https://wa.me/6281234567890" target="_blank">
+                            <span>📱</span> WhatsApp
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <span>📷</span> Instagram
+                        </a>
+                        <a href="mailto:info@minecraftgems.com">
+                            <span>✉️</span> Email
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h5>Informasi</h5>
+                    <ul class="info-list">
+                        <li>✓ Proses Instant</li>
+                        <li>✓ Harga Terjangkau</li>
+                        <li>✓ Aman & Terpercaya</li>
+                        <li>✓ Support 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 EllyarSMP</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
