@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <title>Responsive Navigation Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Ellyars SMP</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a class="active" href="#">Topup Gems</a></li>
+        <li><a href="#">Buy Rank</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </nav>
+
+    <!-- Section Topup Gems Minecraft -->
+    <section id="topup-gems" style="margin: 100px auto 40px; max-width: 900px; text-align: center;">
+      <h2 style="font-size:2rem; margin-bottom: 20px; color:#ffffff;">Topup Gems Minecraft</h2>
+      <p style="margin-bottom: 30px; color:#ffffff;">Pilih paket gems yang ingin dibeli, klik tombol beli untuk langsung chat WhatsApp penjual.</p>
+        <div style="margin-bottom: 24px;">
+          <input type="text" id="nicknameInput" class="nickname-input" placeholder="Masukan nickname MC">
+        </div>
+      <div id="packagesGrid" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
