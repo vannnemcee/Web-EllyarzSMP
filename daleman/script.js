@@ -96,6 +96,36 @@ function generatePackageCards() {
         packagesGrid.appendChild(card);
     });
 }
+// Fungsi untuk membeli paket
+function buyPackage(packageData) {
+    const nickname = document.getElementById('nicknameInput')?.value || '';
+    // START: Ambil metode pembayaran yang dipilih
+    const paymentMethodElement = document.getElementById('paymentMethod');
+    const paymentMethodValue = paymentMethodElement?.value || '';
+    const paymentMethodText = paymentMethodElement?.options[paymentMethodElement.selectedIndex]?.text || '';
+    // END: Ambil metode pembayaran yang dipilih
+    
+    if (nickname.trim() === '') {
+        alert('Silakan masukkan nickname Minecraft Anda terlebih dahulu!');
+        document.getElementById('nicknameInput').focus();
+        return;
+    }
+
+    // START: Validasi metode pembayaran
+    if (paymentMethodValue.trim() === '') {
+        alert('Silakan pilih Metode Pembayaran yang Anda inginkan!');
+        paymentMethodElement.focus();
+        return;
+    }
+    // END: Validasi metode pembayaran
+
+    // START: Update isi pesan WhatsApp
+    let message = `Halo,\n saya ingin membeli paket *${packageData.name}* (${packageData.gems} Gems) seharga Rp ${formatPrice(packageData.price)}\nNickname MC: ${nickname.trim()}\nMetode Pembayaran: ${paymentMethodText}`;
+    // END: Update isi pesan WhatsApp
+    
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
 
 // Smooth scroll untuk navigasi
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
