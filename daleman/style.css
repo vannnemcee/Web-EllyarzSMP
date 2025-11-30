@@ -49,6 +49,12 @@
   background-color: #00968833;
   box-shadow: 0 0 0 2px #00bcd444;
 }
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 20px;
+}
 /* Tambahan kecil untuk ikon dropdown, bisa diabaikan jika tidak ingin repot */
 /* Menggunakan background-image untuk custom arrow */
 .payment-select {
